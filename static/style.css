@@ -90,10 +90,10 @@ ul, li {
 	display: contents;
 }
 
-.projects{
+/* .projects{
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-}
+} 
 
 article{
 	display:grid;
@@ -103,7 +103,7 @@ article{
 		margin:0;
 	}
 
-}
+ }  */
 
 h1{
 	font-size: 400%;

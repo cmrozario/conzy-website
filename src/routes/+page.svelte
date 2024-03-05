@@ -2,6 +2,9 @@
 	<title>Home</title>
 </svelte:head>
 
+<script>
+    import Project from './Project.svelte'; 
+  </script>
 <h1>
     Conzy
 </h1>
