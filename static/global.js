@@ -12,11 +12,11 @@ function $$ (selector, context = document) {
 
 
 let pages = {
-	"": "Home",
-	"projects/": "Projects",
-    "contacts/": "Contacts",
+	".": "Home",
+	"projects": "Projects",
+    "contacts": "Contacts",
 	"https://github.com/cmrozario": "My Github",
-    "resume/": "Resume",
+    "resume": "Resume",
 };
 
 let nav = document.createElement("nav");
