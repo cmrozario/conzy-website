@@ -4,13 +4,6 @@ function $$ (selector, context = document) {
 	return Array.from(context.querySelectorAll(selector));
 }
 
-// var navLinks = $$("nav a");
-// let currentLink = navLinks.find(a => a.host === location.host && a.pathname === location.pathname);
-// if (currentLink) { 
-// 	currentLink.classList.add("current");
-// }
-
-
 let pages = {
 	".": "Home",
 	"projects": "Projects",
@@ -34,13 +27,6 @@ document.body.insertAdjacentHTML("afterbegin", `
 	</label>`
 );
 
-// var select = document.querySelector(".color-scheme select")
-// select.addEventListener("input", function (event) {
-// 	// console.log("color scheme changed to", event.target.value);
-// 	document.documentElement.style.setProperty("color-scheme", event.target.value);
-// 	localStorage.colorScheme = event.target.value
-
-// });
 
 
 function setColorScheme(colorScheme) {
