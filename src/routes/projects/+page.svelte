@@ -1,7 +1,7 @@
 
 <script>
     import projects from '$lib/projects.json';
-    import Project from "$lib/Project.svelte";
+    import Project from "$lib/project.svelte";
   </script>
 
 
