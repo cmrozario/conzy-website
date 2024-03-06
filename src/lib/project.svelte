@@ -11,11 +11,6 @@
 </article>
 
 
-
-
-
-
-
 <style>
 
 
