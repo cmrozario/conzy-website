@@ -2,14 +2,15 @@
 	<title>Home</title>
 </svelte:head>
 
-<script>
+<!-- <script>
     import Project from './Project.svelte'; 
   </script>
+   -->
 <h1>
     Conzy
 </h1>
 <p>
-    I am a 21 year old senior studying Math and AI at MIT. I love playing volleyball, with my dog (DJ), sometimes with Colin Weaver, and sometimes with my brother (Chris). 
+    Hello, I am a 21 year old senior studying Math and AI at MIT. I love playing volleyball, with my dog (DJ), sometimes with Colin Weaver, and sometimes with my brother (Chris). 
 </p>
 <img src = "images/IMG_2430.jpg" alt = "a VERY cute picture of my dog DJ" width = "200">
 <img src = "images/IMG_3672.jpg" alt = "a picture of me and my brother at his first volleyball tournament" width = "200" >

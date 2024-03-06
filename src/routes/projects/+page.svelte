@@ -33,7 +33,7 @@ article{
 	grid-row: span 3;
 	h2{
 		margin:0;
-	}
+	};
 
 }
 </style>
