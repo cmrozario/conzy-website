@@ -14,9 +14,9 @@
     Hello, I am a 21 year old senior studying Math and AI at MIT. I love playing volleyball, with my dog (DJ), sometimes with Colin Weaver, and sometimes with my brother (Chris). 
 </p>
 
-<h1>
+<h4>
     A couple recent projects:
-</h1>
+</h4>
 <div class="projects">
     {#each projects.slice(0,3) as p}
     <Project info={p} />
