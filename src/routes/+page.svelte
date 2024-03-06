@@ -5,6 +5,7 @@
 <script>
     import projects from '$lib/projects.json';
     import Project from "$lib/project.svelte";
+    console.log(projects)
   </script>
 
 <h1>
@@ -18,7 +19,7 @@
     A couple of recent projects:
 </h2>
 <div class="projects">
-    {#each projects.slice(0,3) as p}
+    {#each projects.slice(0,3) as p(p.title)}
     <Project info={p} hLevel=3 />
     {/each}
    
