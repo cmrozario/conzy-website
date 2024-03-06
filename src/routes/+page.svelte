@@ -14,12 +14,12 @@
     Hello, I am a 21 year old senior studying Math and AI at MIT. I love playing volleyball, with my dog (DJ), sometimes with Colin Weaver, and sometimes with my brother (Chris). 
 </p>
 
-<h4>
+<h2>
     A couple of recent projects:
-</h4>
+</h2>
 <div class="projects">
     {#each projects.slice(0,3) as p}
-    <Project info={p} />
+    <Project info={p} hLevel=3 />
     {/each}
    
 </div>
