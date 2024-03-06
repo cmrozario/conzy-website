@@ -2,10 +2,11 @@
 	<title>Home</title>
 </svelte:head>
 
-<!-- <script>
-    import Project from './Project.svelte'; 
+<script>
+    import projects from '$lib/projects.json';
+    import Project from "$lib/Project.svelte";
   </script>
-   -->
+
 <h1>
     Conzy
 </h1>
