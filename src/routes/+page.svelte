@@ -15,7 +15,7 @@
 </p>
 
 <h4>
-    A couple recent projects:
+    A couple of recent projects:
 </h4>
 <div class="projects">
     {#each projects.slice(0,3) as p}
