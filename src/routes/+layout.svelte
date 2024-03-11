@@ -30,30 +30,3 @@ FOLO <slot />
     font-size:80%;}
 </style>
 
-<!-- {#await fetch("https://api.github.com/users/cmrozario") }
-	<p>Loading...</p>
-{:then response}
-	{#await response.json()}
-		<p>Decoding...</p>
-	{:then data}
-        <section>
-            <h2>My GitHub stats</h2>
-            <dl>
-                <dt>Followers</dt>
-                <dd>{data.followers}</dd>
-                <dt>Following</dt>
-                <dd>{data.following}</dd>
-                <dt>Public Repos</dt>
-                <dd>{data.public_repos}</dd>
-            </dl>
-        </section>
-	{:catch error}
-		<p class="error">
-			Something went wrong: {error.message}
-		</p>
-	{/await}
-{:catch error}
-	<p class="error">
-		Something went wrong: {error.message}
-	</p>
-{/await} -->
