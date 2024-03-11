@@ -35,13 +35,6 @@
 
 
 <style>
-    .color-scheme{
-    position: absolute;
-    top: .1rem; 
-    right:1rem; 
-    font-family:inherit; 
-    font-size:80%;}
-
     dl {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
