@@ -10,45 +10,46 @@ let pages = {
     "contacts": "Contacts",
 	"https://github.com/cmrozario": "My Github",
     "resume": "Resume",
+	"A4": "A4",
 };
 
 let nav = document.createElement("nav");
 document.body.prepend(nav);
 
 
-document.body.insertAdjacentHTML("afterbegin", `
-	<label class="color-scheme" style = "position: absolute; top: .1rem; right:1rem; font-family:inherit; font-size:80%;">
-		Theme:
-		<select>
-			<option value = "light dark">Automatic</option>
-			<option value = "light">Light</option>
-			<option value = "dark">Dark</option>
-		</select>
-	</label>`
-);
+// document.body.insertAdjacentHTML("afterbegin", `
+// 	<label class="color-scheme" style = "position: absolute; top: .1rem; right:1rem; font-family:inherit; font-size:80%;">
+// 		Theme:
+// 		<select>
+// 			<option value = "light dark">Automatic</option>
+// 			<option value = "light">Light</option>
+// 			<option value = "dark">Dark</option>
+// 		</select>
+// 	</label>`
+// );
 
 
 
-function setColorScheme(colorScheme) {
-	localStorage.setItem("colorScheme", colorScheme);
-	document.documentElement.style.setProperty("color-scheme", colorScheme)
-}
+// function setColorScheme(colorScheme) {
+// 	localStorage.setItem("colorScheme", colorScheme);
+// 	document.documentElement.style.setProperty("color-scheme", colorScheme)
+// }
 
-(function (){
-	var select = document.querySelector(".color-scheme select")
-	select.addEventListener("input", function(event){
-		setColorScheme(event.target.value)
-	})
-	var storedColor = localStorage.getItem("colorScheme");
-	if (storedColor) {
-		setColorScheme(storedColor);
-		select.value = storedColor;
-	}else{
-		setColorScheme("light dark");
-		select.value = "light dark";
+// (function (){
+// 	var select = document.querySelector(".color-scheme select")
+// 	select.addEventListener("input", function(event){
+// 		setColorScheme(event.target.value)
+// 	})
+// 	var storedColor = localStorage.getItem("colorScheme");
+// 	if (storedColor) {
+// 		setColorScheme(storedColor);
+// 		select.value = storedColor;
+// 	}else{
+// 		setColorScheme("light dark");
+// 		select.value = "light dark";
 
-	}
-})();
+// 	}
+// })();
 
 
 const ARE_WE_HOME = document.documentElement.classList.contains("home");

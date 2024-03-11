@@ -1,12 +1,15 @@
-<svelte:head>
-	<title>Home</title>
-</svelte:head>
-
 <script>
     import projects from '$lib/projects.json';
     import Project from "$lib/project.svelte";
     console.log(projects)
-  </script>
+</script>
+
+
+
+<svelte:head>
+	<title>Home</title>
+</svelte:head>
+
 
 <h1>
     Conzy

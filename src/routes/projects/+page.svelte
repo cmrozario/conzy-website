@@ -2,7 +2,7 @@
 <script>
     import projects from '$lib/projects.json';
     import Project from "$lib/project.svelte";
-  </script>
+ </script>
 
 
 <svelte:head>
