@@ -29,22 +29,11 @@ FOLO <slot />
     font-family:inherit; 
     font-size:80%;}
 
-    dl {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    }
 
-    dt {
-    grid-row: 1;
-    }
-
-    dd {
-    grid-row: 2;
-    }
 
 </style>
 
-{#await fetch("https://api.github.com/users/cmrozario") }
+<!-- {#await fetch("https://api.github.com/users/cmrozario") }
 	<p>Loading...</p>
 {:then response}
 	{#await response.json()}
@@ -70,4 +59,4 @@ FOLO <slot />
 	<p class="error">
 		Something went wrong: {error.message}
 	</p>
-{/await}
+{/await} -->

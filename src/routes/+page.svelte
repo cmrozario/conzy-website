@@ -33,3 +33,55 @@
 <img src = "images/IMG_2608.jpg" alt = "a picture of Colin Weaver, my boyfriend of 3 years" width = "200" >
 <img src = "images/MIT Womens Volleyball 2022 NCAA Sweet 16 (Tufts)-1110_Original.jpg" alt = "a picture of me playing volleyball at Tufts university" width = "300">
 
+
+<style>
+    .color-scheme{
+    position: absolute;
+    top: .1rem; 
+    right:1rem; 
+    font-family:inherit; 
+    font-size:80%;}
+
+    dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    }
+
+    dt {
+    grid-row: 1;
+    }
+
+    dd {
+    grid-row: 2;
+    }
+
+</style>
+
+
+{#await fetch("https://api.github.com/users/cmrozario") }
+	<p>Loading...</p>
+{:then response}
+	{#await response.json()}
+		<p>Decoding...</p>
+	{:then data}
+        <section>
+            <h2>My GitHub stats</h2>
+            <dl>
+                <dt>Followers</dt>
+                <dd>{data.followers}</dd>
+                <dt>Following</dt>
+                <dd>{data.following}</dd>
+                <dt>Public Repos</dt>
+                <dd>{data.public_repos}</dd>
+            </dl>
+        </section>
+	{:catch error}
+		<p class="error">
+			Something went wrong: {error.message}
+		</p>
+	{/await}
+{:catch error}
+	<p class="error">
+		Something went wrong: {error.message}
+	</p>
+{/await}
