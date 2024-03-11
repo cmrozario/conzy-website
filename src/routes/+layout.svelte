@@ -28,9 +28,6 @@ FOLO <slot />
     right:1rem; 
     font-family:inherit; 
     font-size:80%;}
-
-
-
 </style>
 
 <!-- {#await fetch("https://api.github.com/users/cmrozario") }

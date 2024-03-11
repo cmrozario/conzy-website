@@ -2,6 +2,8 @@
     import projects from '$lib/projects.json';
     import Project from "$lib/project.svelte";
     console.log(projects)
+
+    let profileData = fetch("https://api.github.com/users/your-username")
 </script>
 
 
