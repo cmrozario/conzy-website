@@ -34,14 +34,30 @@
     $: selectedYear = selectedYearIndex > -1 ? pieData[selectedYearIndex].label : null;
 
 
+    // let filteredByYear;
+    // $: filteredByYear = projects.filter((project) => {
+    //     let values = Object.values(project).join("\n").toLowerCase();
+    //     return values.includes(query.toLowerCase());
+
+    //     if (selectedYear) {
+    //         return  project.year === selectedYear;
+    //     }
+
+    //     return true;
+    //     });
+
     let filteredByYear;
     $: filteredByYear = projects.filter((project) => {
+        let values = Object.values(project).join("\n").toLowerCase();
+        let selectedValues = values.includes(query.toLowerCase());
+
         if (selectedYear) {
-            return project.year === selectedYear;
+            return selectedValues && project.year === selectedYear;
         }
 
-        return true;
-        });
+        return selectedValues;
+    });
+
 
 </script>
 
