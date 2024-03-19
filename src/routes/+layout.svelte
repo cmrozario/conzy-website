@@ -1,4 +1,4 @@
-FOLO <slot />
+<slot />
 <script>
     let colorScheme = "light dark";
     let root = globalThis?.document?.documentElement;
