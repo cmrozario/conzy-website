@@ -1,6 +1,9 @@
 <script>
     export let info = {};
-    let p = info;
+    let p;
+    $:{
+        p = info;
+    }
     export let hLevel = 2;
 </script>
 
