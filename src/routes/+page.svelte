@@ -37,19 +37,6 @@
 
 
 <style>
-    dl {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    }
-
-    dt {
-    grid-row: 1;
-    }
-
-    dd {
-    grid-row: 2;
-    }
-
 </style>
 
 
@@ -61,7 +48,7 @@
 	{:then data}
         <section>
             <h2>My GitHub stats</h2>
-            <dl>
+            <dl class = "stats">
                 <dt>Followers</dt>
                 <dd>{data.followers}</dd>
                 <dt>Following</dt>

@@ -95,15 +95,6 @@ ul, li {
 	grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 } 
 
-/* article{
-	display:grid;
-	grid-template-rows: subgrid;
-	grid-row: span 3;
-	h2{
-		margin:0;
-	}
-
- }   */
 
 h1{
 	font-size: 400%;
@@ -120,4 +111,32 @@ article p.resumehead {
     display: flex;
     justify-content: space-between;
     align-items: center; /* Optional: Align items vertically in the center */
+}
+
+
+dl.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f8f9fa; /* Lighter gray background */
+	padding: 20px; /* Added padding for better spacing */
+
+
+}
+
+dl.stats dt {
+    grid-row: 1;
+
+	background-color: #f1c6d3; /* Pastel pink background for dt */
+	color: #333; /* Dark text color */
+	padding: 10px; /* Added padding for better spacing */
+	/* margin-top: 10px; Separate dt elements */
+}
+
+dl.stats dd {
+    grid-row: 2;
+	padding: 10px; /* Added padding for better spacing */
 }
