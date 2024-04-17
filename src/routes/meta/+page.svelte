@@ -26,7 +26,6 @@
     let xAxis, yAxis;
     let width = 1000, height = 600;
     let margin = {top: 10, right: 10, bottom: 30, left: 20};
-    let myProgressVariable;
 
 
 
@@ -61,6 +60,8 @@
 
         return ret;
         });
+        commits = d3.sort(commits, d => -d.totalLines);
+
     });
 
     let commitProgress = 100;
@@ -155,6 +156,10 @@
 
     }
 
+    $: rscale = d3.scaleSqrt(d3.extent(commits, d=>d.totalLines), [2,30])
+    console.log("hello")
+    console.log(filteredLines)
+
     let selectedCommits = [];
 
     function brushed (evt) {
@@ -168,7 +173,6 @@
             return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
         });
     }
-        
 
 
     function isCommitSelected (commit) {
@@ -177,16 +181,13 @@
 
 
 
-    $: {
-        d3.select(svg).call(d3.brush().on("start brush end", brushed));
-        d3.select(svg).selectAll(".dots, .overlay ~ *").raise();
-        }
+    $: {d3.select(svg).call(d3.brush().on("start brush end", brushed));
+        d3.select(svg).selectAll(".dots, .overlay ~ *").raise();        }
 
     $: hasSelection = selectedCommits.length > 0;
     $: selectedLines = (hasSelection ? selectedCommits : filteredCommits).flatMap(d => d.lines);
     $: totalLines = selectedLines.length;
     $: languageBreakdown = d3.rollups(selectedLines, D=> D.length, d=> d.type)
-
 
 
 
@@ -227,8 +228,9 @@
                     <circle
                         cx={ xScale(commit.datetime) }
                         cy={ yScale(commit.hourFrac) }
-                        r="5"
+                        r= {rscale(commit.totalLines)}
                         fill = "steelblue"
+                        fill-opacity = "70%"
                         class:selected={isCommitSelected(commit)}
                         on:mouseenter= {evt => dotInteraction(index, evt)}
                         on:mouseenter={evt => {
