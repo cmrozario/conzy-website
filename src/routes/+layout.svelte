@@ -8,6 +8,9 @@
 
     let profileData = fetch("https://api.github.com/users/your-username");
 
+    export const prerender = true;
+
+
 </script>
 
 
