@@ -8,26 +8,32 @@
 <article class="entry-card">
   <h2>{title}</h2>
   <small class="date">{date}</small>
+  
   <div class="content">
-  {@html content}
-</div>
-  <div class="image-gallery">
-    {#each images as img}
-      <img src={`images/${img}`} alt={title} />
-    {/each}
+    {@html content}
   </div>
+
+  {#if images.length}
+    <div class="image-gallery">
+      {#each images as img}
+        <img src={`images/${img}`} alt={title} />
+      {/each}
+    </div>
+  {/if}
 </article>
 
 <style>
-  .entry-card {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 2rem auto;
-    font-family: 'Arial', sans-serif;
-  }
+.entry-card {
+  display: block;       /* ✅ Ensures vertical stacking */
+  width: 100%;          /* ✅ Forces full width of parent */
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: 'Arial', sans-serif;
+}
 
   h2 {
     font-size: 2.5rem;
@@ -49,35 +55,47 @@
     margin-bottom: 1.5rem;
   }
 
-.content aside {
-  background-color: #f0f8ff;
-  border-left: 4px solid #0077cc;
-  padding: 1rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  color: #333;
-  border-radius: 6px;
-}
+  .content aside {
+    background-color: #f0f8ff;
+    border-left: 4px solid #0077cc;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #333;
+    border-radius: 6px;
+  }
 
   .image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
     gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .image-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  .image-gallery {
+    scrollbar-width: none; /* Firefox */
   }
 
   .image-gallery img {
-    width: 100%;
+    flex: 0 0 auto;
+    width: 300px;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    scroll-snap-align: start;
   }
 
   .image-gallery img:hover {
     transform: scale(1.05);
   }
 
-  /* Responsive Design */
   @media (max-width: 768px) {
     .entry-card {
       padding: 1rem;
@@ -91,8 +109,8 @@
       font-size: 1rem;
     }
 
-    .image-gallery {
-      grid-template-columns: 1fr;
+    .image-gallery img {
+      width: 240px;
     }
   }
 </style>

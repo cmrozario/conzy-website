@@ -15,7 +15,11 @@
     <nav>
       <ul>
         {#each blogs as blog}
-          <li><a href={`#${blog.title.replace(/\s+/g, '-')}`}>{blog.title}</a></li>
+          <li>
+            <a href={"#" + blog.title.replace(/\s+/g, '-')}>
+              {blog.title}
+            </a>
+          </li>
         {/each}
       </ul>
     </nav>
@@ -54,16 +58,24 @@
 </div>
 
 <style>
-  /* Layout */
-  .layout {
-    display: flex;
-    font-family: system-ui, sans-serif;
-    background-color: #f9f9f9;
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 
-  /* Sidebar */
+  .layout {
+    display: flex;
+    flex-direction: row;
+    font-family: system-ui, sans-serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .sidebar {
-    width: 180px;
+    width: 200px;
     background-color: #ffffff;
     padding: 1rem;
     border-right: 1px solid #ddd;
@@ -71,6 +83,8 @@
     top: 0;
     height: 100vh;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    box-sizing: border-box;
   }
 
   .sidebar h1 {
@@ -83,13 +97,17 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column; /* ✅ force vertical layout */
+    gap: 0.5rem;
   }
 
   .sidebar li {
-    margin-bottom: 0.5rem;
+    display: block;
   }
 
   .sidebar a {
+    display: block;
     text-decoration: none;
     color: #0077cc;
     font-size: 0.9rem;
@@ -99,20 +117,26 @@
     text-decoration: underline;
   }
 
-  /* Main Content */
   .content {
     flex: 1;
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
   }
 
   .intro {
     margin-bottom: 2rem;
+    width: 100%;
   }
 
   .blog-section {
+    width: 100%;
     margin-bottom: 2.5rem;
+    clear: both;
   }
 
   .github-stats {
@@ -120,7 +144,9 @@
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .github-stats dl {
@@ -132,5 +158,36 @@
 
   h1, h2, h3 {
     color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .layout {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .sidebar h1 {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .content {
+      padding: 1rem;
+    }
   }
 </style>
