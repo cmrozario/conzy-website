@@ -25,15 +25,17 @@
 <style>
 .entry-card {
   display: block;       /* ✅ Ensures vertical stacking */
-  width: 100%;          /* ✅ Forces full width of parent */
+  width: 85%;          /* ✅ Forces full width of parent */
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 2rem 2rem;
   font-family: 'Arial', sans-serif;
 }
+
+
 
   h2 {
     font-size: 2.5rem;
@@ -95,6 +97,9 @@
   .image-gallery img:hover {
     transform: scale(1.05);
   }
+  .image-gallery {
+  max-width: 70%;
+}
 
   @media (max-width: 768px) {
     .entry-card {

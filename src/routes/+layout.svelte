@@ -23,13 +23,25 @@
     </select>
 </label>
 
+<style global>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
 
-<style>
-    .color-scheme{
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+   .color-scheme{
     position: absolute;
     top: .1rem; 
     right:1rem; 
     font-family:inherit; 
     font-size:80%;}
 </style>
+
+
 

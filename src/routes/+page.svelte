@@ -11,7 +11,7 @@
 
 <div class="layout">
   <aside class="sidebar">
-    <h1>🌍 Travel Blog</h1>
+    
     <nav>
       <ul>
         {#each blogs as blog}
@@ -58,6 +58,15 @@
 </div>
 
 <style>
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* ✅ Prevent layout from spilling */
+  box-sizing: border-box;
+}
+
+
   html, body {
     margin: 0;
     padding: 0;
@@ -117,16 +126,20 @@
     text-decoration: underline;
   }
 
-  .content {
-    flex: 1;
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-  }
+.content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+
+
 
   .intro {
     margin-bottom: 2rem;
